@@ -4,7 +4,7 @@
    "description": "TWINSの休校情報を通知するやつ",
    "scripts": {
       "start": "ts-node src/index.ts",
-      "start:dev": "tsc && rm -f ./*.png && node dist/src/index.js",
+      "start:dev": "rm -f ./*.png && ts-node src/index.ts",
       "test": "rm -f ./*.png && jest -notify --config=./jest.config.js"
    },
    "engines": {
@@ -29,6 +29,7 @@
       "express": "^4.16.4",
       "jest": "^24.8.0",
       "ts-jest": "^24.0.2",
+      "ts-node": "^8.1.0",
       "typescript": "3.4.5"
    },
    "dependencies": {
