@@ -3,12 +3,6 @@
   "description": "TWINSの休校情報を通知するやつ",
   "repository": "https://github.com/entyo/konakaga",
   "image": "heroku/nodejs",
-  "addons": [
-    {
-      "plan": "scheduler:standard",
-      "as": "SCHEDULER"
-    }
-  ],
   "env": {
     "TWINS_ID": {
       "description": "UTID-NAME（sから始まるユーザー名、TWINSでの認証に利用します）",
@@ -16,14 +10,6 @@
     },
     "TWINS_PASS": {
       "description": "全学計算機のパスワード（TWINSでの認証に利用します）",
-      "value": ""
-    },
-    "SENDGRID_USERNAME": {
-      "description": "SendGridのアカウント（予め作成しておく必要があります）のユーザ名",
-      "value": ""
-    },
-    "SENDGRID_PASSWORD": {
-      "description": "SendGridのアカウント（予め作成しておく必要があります）のパスワード",
       "value": ""
     },
     "SENDGRID_API_KEY": {
