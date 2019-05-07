@@ -8,5 +8,5 @@ if (nodeEnv === "development") {
 } else {
   // nodecron.schedule('0 0 0 * * *', () => runAllAsync);
   // test
-  nodecron.schedule('0 0 0 * *', () => runAllAsync);
+  nodecron.schedule('* * * * *', () => runAllAsync);
 }
