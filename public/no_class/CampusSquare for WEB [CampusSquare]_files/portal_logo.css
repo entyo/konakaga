@@ -1,0 +1,174 @@
+﻿@charset "utf-8";
+
+#portalsetting {
+  cursor: default;
+}
+
+#timeout-timer {
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+
+.portal-system-menu-1 {
+  min-width: 330px;
+  text-align: left;
+}
+.portal-system-menu-1 > ul {
+  margin: auto;
+  padding: 0px;
+  padding-left: 5px;
+  list-style-type: none;
+  font-size: 92%;
+  text-align: center;
+  vertical-align: middle;
+}
+.portal-system-menu-1 > ul > li {
+}
+.portal-system-menu-1 > ul > li.txt {
+}
+.portal-system-menu-1 > ul.btn {
+  float: left;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.portal-system-menu-1 img {
+  border: none;
+  width: 24px;
+  height: 24px;
+}
+
+
+.portal-system-menu-2 {
+  width: 410px;
+  text-align: left;
+}
+.portal-system-menu-2 > ul {
+  /*margin: auto;*/
+  padding: 0px;
+  padding-left: 5px;
+  list-style-type: none;
+  vertical-align: middle;
+}
+.portal-system-menu-2 > ul > li {
+  float: left;
+  font-size: 92%;
+  text-align: left;
+  vertical-align: middle;
+}
+.portal-system-menu-2 > ul > li.txt {
+  padding-top: 2px;
+}
+.portal-system-menu-2 > ul.btn {
+  float: left;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.portal-system-menu-2 img {
+  border: none;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+
+.portal-loginuser-info-1 {
+  min-width: 100px;
+  max-width: 500px;
+  text-align: center;
+}
+.portal-loginuser-info-1 > ul {
+  margin: auto;
+  padding: 0px;
+  padding-left: 5px;
+  list-style-type: none;
+  font-size: 92%;
+  text-align: center;
+  vertical-align: middle;
+  float: left;
+}
+.portal-loginuser-info-1 > ul > li {
+}
+.portal-loginuser-info-1 > ul > li.txt {
+}
+
+.portal-loginuser-info-1 > ul.btn {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.portal-loginuser-info-1 img {
+  border: none;
+  width: 24px;
+  height: 24px;
+}
+
+
+.portal-loginuser-info-2 {
+  min-width: 100px;
+  max-width: 300px;
+  text-align: left;
+}
+.portal-loginuser-info-2 > ul {
+  /*margin: auto;*/
+  padding: 0px;
+  list-style-type: none;
+  font-size: 92%;
+  text-align: left;
+  vertical-align: middle;
+}
+.portal-loginuser-info-2 > ul > li {
+  float: left;
+  vertical-align: middle;
+}
+.portal-loginuser-info-2 > ul > li.txt {
+  padding-top: 2px;
+}
+.portal-loginuser-info-2 img {
+  border: none;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+
+.portal-loginuser-info-smart {
+  min-width: 100px;
+  max-width: 100px;
+  text-align: left;
+  padding-top: 3px;
+}
+.portal-loginuser-info-smart > ul {
+  margin: 5px;
+  padding: 0px;
+  list-style-type: none;
+  font-size: 100%;
+  text-align: left;
+  vertical-align: middle;
+}
+.portal-loginuser-info-smart > ul > li {
+  float: left;
+  vertical-align: middle;
+}
+.portal-loginuser-info-smart > ul > li.txt {
+  padding-top: 2px;
+}
+.portal-loginuser-info-smart img {
+  border: none;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+/*【ユーザ切替】*/
+.portalSwitchUserAttention {
+  font-size:20pt;
+  color:#FF0000;
+  background-color:#ffffbb;
+  text-align:center;
+}
+.portalSwitchUserAttentionDetail {
+  font-size:12pt;
+  color:#FF0000;
+  background-color:#ffffbb;
+  text-align:center;
+}

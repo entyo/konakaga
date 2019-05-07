@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!-- saved from url=(0296)https://twins.tsukuba.ac.jp/campusweb/campusportal.do?page=main&action=rwf&tabId=home&wfId=wf_PTW0005100-s_20120920145137&rwfHash=e16899ae65a6b8c04862ecd15faaad49&event=findKyukohokoShosai&taishoymd=20190417&yobi=3&jigen=1&nendo=2019&jikanwariShozokucd=26&jikanwaricd=GE11022&tekiyoStYmd=20190417 -->
+<html><script>(function main() {
+    // Create enabled event
+    function fireEnabledEvent() {
+        // If gli exists, then we are already present and shouldn't do anything
+        if (!window.gli) {
+            setTimeout(function () {
+                var enabledEvent = document.createEvent("Event");
+                enabledEvent.initEvent("WebGLEnabledEvent", true, true);
+                document.dispatchEvent(enabledEvent);
+            }, 0);
+        } else {
+            //console.log("WebGL Inspector already embedded on the page - disabling extension");
+        }
+    };
+
+    // Grab the path root from the extension
+    document.addEventListener("WebGLInspectorReadyEvent", function (e) {
+        var pathElement = document.getElementById("__webglpathroot");
+        if (window["gliloader"]) {
+            gliloader.pathRoot = pathElement.innerText;
+        } else {
+            // TODO: more?
+            window.gliCssUrl = pathElement.innerText + "gli.all.css";
+        }
+    }, false);
+
+    // Rewrite getContext to snoop for webgl
+    var originalGetContext = HTMLCanvasElement.prototype.getContext;
+    if (!HTMLCanvasElement.prototype.getContextRaw) {
+        HTMLCanvasElement.prototype.getContextRaw = originalGetContext;
+    }
+    HTMLCanvasElement.prototype.getContext = function () {
+        var ignoreCanvas = this.internalInspectorSurface;
+        if (ignoreCanvas) {
+            return originalGetContext.apply(this, arguments);
+        }
+
+        var result = originalGetContext.apply(this, arguments);
+        if (result == null) {
+            return null;
+        }
+
+        var contextNames = ["moz-webgl", "webkit-3d", "experimental-webgl", "webgl", "3d"];
+        var requestingWebGL = contextNames.indexOf(arguments[0]) != -1;
+        if (requestingWebGL) {
+            // Page is requesting a WebGL context!
+            fireEnabledEvent(this);
+
+            // If we are injected, inspect this context
+            if (window.gli) {
+                if (gli.host.inspectContext) {
+                    // TODO: pull options from extension
+                    result = gli.host.inspectContext(this, result);
+                    // NOTE: execute in a timeout so that if the dom is not yet
+                    // loaded this won't error out.
+                    window.setTimeout(function() {
+                        var hostUI = new gli.host.HostUI(result);
+                        result.hostUI = hostUI; // just so we can access it later for debugging
+                    }, 0);
+                }
+            }
+        }
+
+        return result;
+    };
+})();</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <link rel="stylesheet" type="text/css" href="./campusportal_files/jquery-ui-1.8.19.custom.css">
+    <link rel="stylesheet" type="text/css" href="./campusportal_files/portal_body.css">
+    <link rel="stylesheet" type="text/css" href="./campusportal_files/portal_table.css">
+    <link rel="stylesheet" type="text/css" href="./campusportal_files/wrapperStyleSheet.css">
+    <script type="text/javascript" src="./campusportal_files/jquery.min.js"></script>
+    <script type="text/javascript" src="./campusportal_files/jquery-ui-1.8.19.custom.min.js"></script>
+    <script type="text/javascript" src="./campusportal_files/portal_common.js"></script>
+    <script type="text/javascript" src="./campusportal_files/main_portlet.js"></script>
+<style type="text/css">
+body {
+  text-align: center;
+}
+#mysche-kyukohoko-detail-button {
+  text-align: center;
+}
+#mysche-kyukohoko-jikanwari {
+  border: 1px #999 solid;
+  margin-left: auto;
+  margin-right: auto;
+}
+#mysche-kyukohoko-jikanwari th {
+  border: 1px #999 solid;
+  margin: 0px;
+  padding: 2px;
+  width: 80px;
+  text-align: right;
+  background-color: #FFDDAA;
+}
+#mysche-kyukohoko-jikanwari td {
+  border: 1px #999 solid;
+  margin: 0px;
+  padding: 2px;
+  width: 140px;
+  text-align: left;
+}
+#mysche-kyukohoko-detail {
+  border: 1px #999 solid;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+#mysche-kyukohoko-detail th {
+  width: 100px;
+  margin: 0px;
+  padding: 5px;
+  border: 1px #999 solid;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: middle;
+  background-color: #FFDDAA;
+}
+#mysche-kyukohoko-detail td {
+  width: 350px;
+  margin: 0px;
+  padding: 5px;
+  border: 1px #999 solid;
+  text-align: left;
+}
+</style>
+</head>
+<body cz-shortcut-listen="true" style="">
+<div>
+
+
+<h2>休講補講情報詳細</h2>
+<table id="mysche-kyukohoko-jikanwari">
+    <tbody><tr>
+        <th>時間割所属</th>
+        <td>情報学群</td>
+        <th>学年</th>
+        <td>2年</td>
+    </tr>
+    <tr>
+        <th>科目</th>
+        <td>
+            
+                知識情報演習I-2
+            
+        </td>
+        <th>時間割コード</th>
+        <td>GE11022</td>
+    </tr>
+</tbody></table>
+<p></p>
+<table id="mysche-kyukohoko-detail">
+    <tbody><tr>
+        <th>変更区分</th>
+        <td>休講</td>
+    </tr>
+    <tr>
+        <th>休講理由</th>
+        <td>
+            
+                
+                    (E)&nbsp;&nbsp;その他 
+                
+                
+            
+        </td>
+    </tr>
+    <tr>
+        <th>対象日・時限</th>
+        <td>
+            2019年4月17日(水)&nbsp;&nbsp;1限
+        </td>
+    </tr>
+    <tr>
+        <th>教室</th>
+        <td>
+            
+        </td>
+    </tr>
+    <tr>
+        <th>教員</th>
+        <td>
+            
+                
+                    呑海 沙織
+                
+                    鈴木 伸崇
+                
+            
+        </td>
+    </tr>
+    <tr>
+        <th>補講有無</th>
+        <td>
+           
+                
+                    有り
+                
+                
+            
+        </td>
+    </tr>
+    <tr>
+        <th>公開日</th>
+        <td>2019年4月8日</td>
+    </tr>
+    <tr>
+        <th>備考</th>
+        <td>授業内で周知</td>
+    </tr>
+</tbody></table>
+<div id="mysche-kyukohoko-detail-button">
+<p><input type="button" value="閉じる" onclick="window.close();" class="ui-button ui-widget ui-state-default ui-corner-all" role="button" aria-disabled="false"></p>
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+</body></html>

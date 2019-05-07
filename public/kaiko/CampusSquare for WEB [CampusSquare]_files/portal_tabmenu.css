@@ -1,0 +1,157 @@
+﻿@charset "utf-8";
+
+#tabtable {
+  z-index: 1;
+  position: relative;  /* pieのため */
+  width: 999px;  /* 111px * 9 Tabs */
+  border-collapse: collapse;
+  border-spacing: 0px;
+  border: none;
+  margin: 0px;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  text-align: center;
+  vertical-align: top;
+}
+#tabtable .tabcell {
+  float: left;
+  cursor: pointer;
+  width: 91px;  /* 91px + margin 4px * 2 + border 1px * 2 = 101px*/
+  /*height: 60px;*/
+  margin: 0px;
+  padding: 4px;
+  border: 1px transparent solid;
+  font-size: 92%;
+  text-align: center;
+  vertical-align: bottom;
+}
+#tabtable .tabcell-br {
+  display: none;
+}
+#tabtable .tabcell-sel {
+  position: relative;  /* pieのため */
+  cursor: pointer;
+  background-color: transparent;
+  /* CSS3 */
+  /*background: linear-gradient(center top , #ffffff, #eeeecc);*/
+  /* chrome safari */
+  /*background: -webkit-gradient(linear, center top, center bottom, from(#ffffff), to(#eeeecc));*/
+  /*background-image: -webkit-linear-gradient(center top , #ffffff, #eeeecc);*/
+  /* firefox */
+  /*background-image: -moz-linear-gradient(center top , #ffffff, #eeeecc);*/
+  /* opera */
+  /*background-image: -o-linear-gradient(to center top, #ffffff, #eeeecc);*/
+  /* IE6 IE7 IE8? */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startcolorstr=#ffffff, endcolorstr=#eeeecc));*/
+  /* IE8? */
+  /*-ms-filter:"progid:DXImageTransform.Microsoft.gradient(GradientType=0,startcolorstr=#ffffff, endcolorstr=#eeeecc))";*/
+  /* IE */
+  /*  zoom: 1;*/
+  /* CSS3 */
+  /*border-radius: 10px 10px 0px 0px;*/
+  /* chrome safari */
+  /*-webkit-border-radius: 10px 10px 0px 0px;*/
+}
+#tabtable img {
+  float: left;
+  border: none;
+  width: 48px;
+  height: 48px;
+  margin: 0px;
+  margin-left: 26px;
+  margin-bottom: 2px;
+  padding: 0px;
+}
+#tabtable p {
+  clear: left;
+  margin: 0px;
+  padding: 0px;
+}
+
+#tabmenutable {
+  width: 999px;  /* 111px * 9 Tabs */
+  text-align: left;
+  vertical-align: middle;
+  margin: 0px;
+  padding: 0px;
+  background-color: transparent;
+}
+#tabmenu-ul {
+  border: none;
+  margin: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  text-align: left;
+  vertical-align: middle;
+  list-style-type: none;
+}
+#tabmenu-ul li {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 5px;
+  padding-right: 20px;
+  padding-top: 0px;
+  padding-bottom: 5px;
+}
+#tabmenutable img {
+  margin: 0px;
+  margin-right: 5px;
+  padding: 0px;
+  width: 16px;
+  height: 16px;
+  border: none;
+  vertical-align: middle;
+}
+#tabmenu-ul span {
+  cursor: pointer;
+}
+#tabmenu-ul li.menu-portlet {
+}
+#tabmenu-ul li.menu-func {
+}
+#tabmenu-ul li.menu-link {
+}
+#tabmenu-ul li.menu-nolink {
+}
+#tabmenu-ul div.hr-div {
+  line-height: 3px;
+}
+#tabmenu-ul hr {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* submenu */
+#tabmenu-ul .tabmenu-sub-ul {
+  position: absolute;
+  display: none;
+  z-index: 1001;
+  border: 1px #000 solid;
+  margin: 0px;
+  padding: 10px 10px 10px 0px;
+  text-align: left;
+  vertical-align: middle;
+  list-style-type: none;
+}
+#tabmenu-ul .tabmenu-sub-ul li {
+  float: none;
+  position: relative;
+  margin: 0px;
+  /*padding: 5px;*/
+  white-space: nowrap;
+}
+
+#tabmenutable .sysmenu {
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 5px;
+  padding-right: 20px;
+  padding-top: 0px;
+  padding-bottom: 5px;
+}

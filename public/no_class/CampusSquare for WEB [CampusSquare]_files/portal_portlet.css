@@ -1,0 +1,833 @@
+﻿@charset "utf-8";
+
+/* システムエラー画面用 */
+.sys-err {
+  background-color: #ffddcc;
+  font-size   : 92%;
+  /*font-weight : bold;*/
+  color       : #901010;
+  text-align: center;
+}
+.sys-err-title {
+  font-size   : 150%;
+  font-weight : bold;
+  color       : #901010;
+}
+
+/* 入力エラーメッセージ用 */
+.error {
+  /*font-size   : 100%;*/
+  color       : red;
+}
+
+/* ログインフォーム クラシック */
+#LoginFormClassic {
+  background-color: #CCCC99;
+  border: none;
+  margin: 0px;
+  margin-bottom: 10px;
+  border-radius: 10px 10px 10px 10px;
+  behavior: url( /campusweb/theme/default/newportal/pie/PIE.htc ); /* for IE8 */
+  position: relative;  /* pieのため */
+}
+#LoginFormClassic td {
+  border: none;
+  padding: 0px;
+  text-align: left;
+  vertical-align: middle;
+}
+#LoginFormClassic td.login {
+  border: none;
+  padding: 0px;
+  text-align: left;
+  vertical-align: middle;
+}
+#LoginFormClassic td.right {
+  text-align: right;
+}
+#LoginFormClassic table {
+  background-color: #CCCC99;
+}
+
+/* ログインフォーム シンプル */
+#LoginFormSimple {
+  border: none;
+  margin: 10px;
+}
+#LoginFormSimple td {
+  border: none;
+  padding: 5px;
+  padding-right: 8px;
+  text-align: left;
+  vertical-align: middle;
+}
+/* ログインフォーム スリム */
+#LoginFormSlim {
+  border: none;
+  margin: 5px 10px;
+}
+#LoginFormSlim td {
+  border: none;
+  padding: 3px;
+  text-align: left;
+  vertical-align: middle;
+}
+/* ログインフォーム ダイアログ */
+#LoginFormDialogDiv {
+  border: none;
+  margin: 5px 10px;
+}
+
+/* WEBページ作成 */
+#webpage-list-title-box {
+  border: none;
+  border-left: 10px #9999cc solid;
+  border-bottom: 1px #9999cc solid;
+  padding: 2px;
+  margin-bottom: 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+#webpage-list-title-inner {
+  padding-left: 5px;
+  font-size: 125%;
+}
+
+#webpage-contents {
+}
+#webpage-contents-list-footer-box {
+  border: none;
+  /*border-top: 1px #eeeeee solid;*/
+  /*border-bottom: 1px #eeeeee solid;*/
+  padding: 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: right;
+  vertical-align: middle;
+}
+#webpage-contents-list-footer-inner {
+  padding-right: 5px;
+  font-size: 100%;
+  text-align: right;
+  vertical-align: middle;
+}
+
+#webpage-menu-box {
+  z-index: 999;
+  padding-bottom: 5px;
+  text-align: right;
+}
+#webpage-menu-box > div.left {
+  float: left;
+}
+#webpage-menu-box > div.right {
+  float: right;
+}
+#webpage-menu-box > div > a {
+  cursor: pointer;
+}
+#webpage-menu-box img {
+  border: none;
+  margin: 0px;
+  margin-left: 3px;
+  margin-right: 3px;
+  padding: 0px;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+#webpage-menu-box span {
+  text-align: right;
+  vertical-align: middle;
+}
+#webpage-list-tbl {
+  border: 1px solid #cccccc;
+  margin: 0px;
+  padding: 0px;
+}
+#webpage-list-tbl th {
+  background-color: #eee;
+  border: 1px solid #dddddd;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: normal;
+  text-align: center;
+}
+#webpage-list-tbl td {
+  border: 1px solid #dddddd;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: left;
+}
+#webpage-list-tbl .hover {
+  background-color: #eee;
+}
+
+/* 新着メッセージ */
+#newlist-portlet {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 5px;
+  text-align: left;
+}
+#newlist-portlet .newlist-msg {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 5px;
+  text-align: left;
+  font-size: 83%;
+}
+#newlist-portlet ul {
+  margin: 0px;
+  margin-top: 7px;
+  margin-left: 5px;
+  padding: 0px;
+  list-style-type: none;
+}
+#newlist-portlet li {
+  margin: 0px;
+  margin-top: 5px;
+  padding: 0px;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 92%;
+}
+#newlist-portlet img {
+  width: 16px;
+  height: 16px;
+  border: none;
+  margin: 0px;
+  margin-right: 5px;
+  padding: 0px;
+  vertical-align: middle;
+}
+
+/* Ｍｙスケジュール */
+.mysch-portlet {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;   /* IEバグ回避（センタリング） */
+}
+.mysch-portlet-cal-title {
+  margin: 0px;
+  margin-top: 5px;
+  font-size: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  text-align: center;
+}
+.mysch-portlet-cal-title a {
+  text-decoration: none;    /* imgには適用しない */
+}
+.mysch-portlet-cal-title a.prev img {
+  cursor:pointer;
+  width: 16px;
+  height: 16px;
+  border: none;
+  margin: 0px;
+  float: left;
+}
+.mysch-portlet-cal-title a.next img {
+  cursor:pointer;
+  width: 16px;
+  height: 16px;
+  border: none;
+  margin: 0px;
+  float: right;
+}
+.mysch-portlet-cal {
+  clear: both;  /* mysch-portlet-cal-titleでfloatしているので */
+}
+.mysch-portlet-cal table {
+  border: 1px #ccc solid;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  margin-top: 5px;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-left: auto;
+  padding: 0px;
+  font-size: 83%;
+  text-align: center;
+}
+.mysch-portlet-cal table .day {
+  background-color: #fff;
+  width: 20px;
+  border: 1px #ccc solid;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-decoration: none;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+}
+.mysch-portlet-cal table .sat {
+  background-color: #EEEEDD;
+  width: 20px;
+  border: 1px #ccc solid;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-decoration: none;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+}
+.mysch-portlet-cal table .sun {
+  background-color: #edd;
+  width: 20px;
+  border: 1px #ccc solid;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-decoration: none;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+}
+.mysch-portlet-cal table th.day {
+  background-color: #dde;
+}
+.mysch-portlet-cal table th.sat {
+  background-color: #EEEEDD;
+}
+.mysch-portlet-cal table th.sun {
+  background-color: #edd;
+}
+.mysch-portlet-cal table td {
+  text-align: center !important;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  border: 1px #ccc solid !important;
+}
+.mysch-portlet-cal table td.today {
+  background-color: #cec;
+  width: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.mysch-portlet-cal table td.sel {
+  background-color: #FFCCCC !important;
+  width: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.mysch-portlet-title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 5px;
+  font-size: 100%;
+  text-align: left;
+}
+.mysch-portlet-title img {
+  width: 16px;
+  height: 16px;
+  border: none;
+  margin: 0px;
+  vertical-align: top;
+}
+.mysch-portlet-list {
+  margin: 0px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  list-style-type: none;
+  text-align: left;
+}
+.mysch-portlet-list  li.kyuko {
+  background-color: #FFCCCC;
+}
+.mysch-portlet-list li.hoko {
+  background-color: #CCFFCC;
+}
+.mysch-portlet-list li.kyoshitsu {
+  background-color: #FFFFCC;
+}
+.mysch-portlet-list li.kaiko {
+  background-color: #F0F0F0;
+}
+.mysch-portlet-list li.schedule {
+  background-color: #FFFFFF;
+}
+.mysch-portlet-list div {
+  margin: 0px;
+  margin-top: 2px;
+  margin-left: 25px;
+  font-size: 83%;
+}
+.mysch-portlet-list li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 1px #ccc solid;
+  word-wrap:break-word;
+  overflow: hidden;
+}
+
+
+/* リンク */
+#linklist-portlet {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 5px;
+}
+#linklist-portlet ul {
+  margin: 0px;
+  margin-left: 5px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+#linklist-portlet li {
+  margin-top: 5px;
+}
+
+/* よく使う機能 */
+#bookmarkfunc-portlet {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 5px;
+}
+#bookmarkfunc-portlet ul {
+  margin: 0px;
+  margin-left: 5px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+#bookmarkfunc-portlet li {
+  margin-top: 5px;
+}
+#bookmarkfunc-portlet img {
+  width: 16px;
+  height: 16px;
+  border: none;
+  margin: 0px;
+  margin-right: 5px;
+  padding: 0px;
+  vertical-align: middle;
+}
+
+/* 各種申請 */
+#shinsei-portlet {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 5px;
+}
+#shinsei-portlet ul {
+  margin: 0px;
+  margin-left: 5px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+#shinsei-portlet li {
+  margin-top: 5px;
+}
+#shinsei-portlet img {
+  width: 16px;
+  height: 16px;
+  border: none;
+  margin: 0px;
+  margin-right: 5px;
+  padding: 0px;
+  vertical-align: middle;
+}
+
+/* 証明書予約 */
+#shomeisho-portlet {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 5px;
+}
+#shomeisho-portlet div {
+  margin-top: 10px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  padding: 0px;
+  padding-left: 5px;
+  font-size: 92%;
+}
+#shomeisho-portlet ul {
+  margin: 0px;
+  margin-left: 5px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+#shomeisho-portlet li {
+  margin-top: 5px;
+}
+#shomeisho-portlet img {
+  width: 16px;
+  height: 16px;
+  border: none;
+  margin: 0px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* 新着掲示 */
+#keiji-portlet {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 10px;
+}
+#keiji-portlet .genre-list {
+  margin: 0px;
+  padding: 0px;
+  padding-top: 20px;
+  list-style-type: none;
+}
+#keiji-portlet .genre-list li {
+  margin-top: 0px;
+  margin-right: 30px;
+  margin-bottom: 15px;
+  margin-left: 0px;
+  vertical-align: middle;
+}
+#keiji-portlet .genre-list div {
+  border-bottom: 1px #999 solid;
+  margin: 0px;
+  padding: 3px;
+  vertical-align: middle;
+  background-color: transparent;
+  background: -webkit-gradient(linear, left center, right center, from(#eeeedd), to(#ffffff));
+  background-image: -moz-linear-gradient(left center , #eeeedd, #ffffff);
+  background-image: -webkit-linear-gradient(left center , #eeeedd, #ffffff);
+  background-image: linear-gradient(left center , #eeeedd, #ffffff);
+  /*IE6 IE7 */
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,startcolorstr=#eeeedd, endcolorstr=#ffffff));
+  /* IE8 */
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(GradientType=1,startcolorstr=#eeeedd, endcolorstr=#ffffff))";
+    zoom: 1;
+}
+#keiji-portlet .genre-list img {
+  width: 24px;
+  height: 24px;
+  border: none;
+  margin: 0px;
+  margin-right: 5px;
+  padding: 0px;
+  vertical-align: middle;
+}
+#keiji-portlet .keiji-list {
+  margin: 0px;
+  margin-left: 35px;
+  padding: 0px;
+  list-style-type: none;
+}
+#keiji-portlet .keiji-list li {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+#keiji-portlet li.right {
+  margin-left: 600px;  /* 右寄せ */
+  margin-top: 5px;
+  margin-bottom: 0px;
+  /*text-align: right;*/
+}
+
+/* ツリーメニュー */
+#menu-portlet {
+  margin: 0px;
+  padding: 0px;
+  overflow-y: auto;
+}
+#menu-portlet li {
+  margin: 0px;
+  margin-bottom: 5px;
+  text-align: left;
+  vertical-align: middle;
+}
+#menu-portlet .msg {
+}
+#menu-portlet img {
+  width: 16px;
+  height: 16px;
+  border: none;
+  margin: 0px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+#menu-portlet .menu-list-top {
+  margin: 5px;
+  padding: 0px;
+  list-style-type: none;
+}
+#menu-portlet .menu-list-top li img {
+  width: 24px;
+  height: 24px;
+}
+#menu-portlet .menu-list-first {
+  border-bottom: 1px #999 solid;
+  margin-top: 8px;
+  margin-right: 0px;
+  margin-bottom: 8px;
+  margin-left: 16px;
+  padding: 0px;
+  padding-bottom: 8px;
+  list-style-type: none;
+}
+#menu-portlet .menu-list-first li {
+}
+#menu-portlet .menu-list-first li img {
+  width: 16px;
+  height: 16px;
+}
+#menu-portlet .menu-list-second {
+  border-bottom: 1px #aaa solid;
+  margin-top: 8px;
+  margin-right: 0px;
+  margin-bottom: 8px;
+  margin-left: 16px;
+  padding: 0px;
+  padding-bottom: 8px;
+  list-style-type: none;
+}
+#menu-portlet .menu-list-second li {
+}
+#menu-portlet .menu-list-second-li img {
+  width: 16px;
+  height: 16px;
+}
+
+/* 授業ポートフォリオ */
+#jugyopo-portlet {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 5px;
+}
+#jugyopo-portlet .box {
+  margin: 0px;
+  margin-top: 10px;
+  padding: 5px;
+}
+#jugyopo-portlet .box > p {
+  margin: 0px;
+  font-size: 150%;
+  font-weight: bold;
+}
+#jugyopo-portlet .box > .tbl {
+  background-color: #F5F5DC;
+  border: 1px #333 solid;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  margin: 0px;
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 92%;
+}
+#jugyopo-portlet .box > .tbl tr:hover {
+  background-color: #F0F8FF;
+}
+#jugyopo-portlet .box > .tbl th {
+  background-color: #c0e0c0;
+  border: 1px #fff solid;
+  padding: 5px;
+}
+#jugyopo-portlet .box > .tbl td {
+  border: 1px #fff solid;
+  padding: 5px;
+}
+
+#jugyopo-portlet #rishukamoku-tbl {
+  border: none;
+}
+#jugyopo-portlet #rishukamoku-tbl tr {
+  border-top: 1px #333 solid;
+  border-bottom: 1px #333 solid;
+}
+#jugyopo-portlet #rishukamoku-tbl td {
+  border: none;
+  padding: 5px;
+}
+#jugyopo-portlet .btn {
+  cursor: pointer;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  /* CSS3 */
+  border-radius: 5px 5px 5px 5px;
+  /* chrome safari */
+  -webkit-border-radius: 5px 5px 5px 5px;
+}
+#jugyopo-portlet .btn:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+#jugyopo-portlet .rep {
+  background-color: #96b030;
+}
+#jugyopo-portlet .info {
+  background-color: #80b0c0;
+}
+#jugyopo-portlet .skt {
+  background-color: #B22222;
+}
+#jugyopo-portlet .syl {
+  background-color: #e0a060;
+}
+
+#jugyopo-portlet .boxp {
+  margin: 0px;
+  padding: 5px;
+}
+#jugyopo-portlet .box > p.title {
+  font-size: 100%;
+  font-weight: normal;
+}
+#jugyopo-portlet ul {
+  margin: 0px;
+  margin-top: 7px;
+  padding: 0px;
+  list-style-type: none;
+}
+#jugyopo-portlet ul > li {
+  margin: 0px;
+  margin-top: 5px;
+  padding: 0px;
+  text-align: left;
+  vertical-align: top;
+}
+#jugyopo-portlet ul > li:hover {
+  background-color: #F0F8FF;
+}
+#jugyopo-portlet ul > li div {
+  font-size: 100%;
+  vertical-align: middle;
+}
+#jugyopo-portlet ul > li div > a {
+  vertical-align: middle;
+}
+#jugyopo-portlet ul > li div > a > img {
+  vertical-align: middle;
+}
+#jugyopo-portlet ul.item-list {
+  border: none;
+  border-bottom: 1px #333 solid;
+  margin: 0px;
+  margin-left: 20px;
+  padding: 0px;
+  padding-bottom: 10px;
+}
+#jugyopo-portlet ul.item-list > li {
+  margin: 0px;
+  margin-top: 5px;
+  padding: 0px;
+  text-align: right;
+  vertical-align: top;
+  float: left;
+}
+#jugyopo-portlet ul.item-list span.btn {
+  margin: 1px;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 44px;
+  font-size: 83%;
+}
+
+/* レポート管理 */
+#report-portlet .box {
+  margin: 8px;
+  padding: 5px;
+}
+#report-portlet ul {
+  margin: 0px;
+  margin-top: 7px;
+  padding: 0px;
+  list-style-type: none;
+}
+#report-portlet ul > li {
+  margin: 0px;
+  margin-top: 5px;
+  padding: 0px;
+  text-align: left;
+  vertical-align: middle;
+}
+#report-portlet ul > li div {
+  font-size: 100%;
+  vertical-align: middle;
+}
+#report-portlet ul.item-list {
+  border: none;
+  margin: 0px;
+  margin-left: 20px;
+  padding: 0px;
+  padding-bottom: 10px;
+}
+#report-portlet ul.report-list > li {
+  border-bottom: 1px #333 solid;
+}
+#report-portlet ul.item-list > li {
+  margin: 0px;
+  margin-top: 5px;
+  padding: 0px;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* その他 */
+.highlight_red {
+  color: #ffffff;
+  background: #fa8072;
+  display: inline;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  margin-left: .2em;
+  margin-right: .2em;    
+  padding: .1em .3em .1em;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+  -webkit-border-radius: .5em; 
+  -moz-border-radius: .5em;
+  border-radius: .5em;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.highlight_green {
+  color: #ffffff;
+  background: #3cb371;
+  display: inline;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  margin-left: .2em;
+  margin-right: .2em;    
+  padding: .1em .3em .1em;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+  -webkit-border-radius: .5em; 
+  -moz-border-radius: .5em;
+  border-radius: .5em;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.highlight_gray {
+    color: #ffffff;
+    background: #a9a9a9;
+    display: inline;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    margin-left: .2em;
+    margin-right: .2em;
+    padding: .1em .3em .1em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em; 
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+

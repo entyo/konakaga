@@ -1,0 +1,41 @@
+{
+   "name": "konakaga",
+   "version": "0.0.0",
+   "description": "TWINSの休校情報を通知するやつ",
+   "scripts": {
+      "start": "ts-node src/index.ts",
+      "start:dev": "tsc && rm -f ./*.png && node dist/src/index.js",
+      "test": "rm -f ./*.png && jest -notify --config=./jest.config.js"
+   },
+   "engines": {
+      "node": "10.x"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+ssh://git@github.com/entyo/konakaga.git"
+   },
+   "author": "e_ntyo",
+   "license": "MIT",
+   "bugs": {
+      "url": "https://github.com/entyo/konakaga/issues"
+   },
+   "homepage": "https://github.com/entyo/konakaga#readme",
+   "devDependencies": {
+      "@types/dotenv": "^6.1.1",
+      "@types/express": "^4.16.1",
+      "@types/jest": "^24.0.12",
+      "@types/node": "^10.x",
+      "@types/puppeteer": "^1.12.3",
+      "express": "^4.16.4",
+      "jest": "^24.8.0",
+      "ts-jest": "^24.0.2",
+      "typescript": "3.4.5"
+   },
+   "dependencies": {
+      "@sendgrid/mail": "^6.4.0",
+      "dotenv": "^8.0.0",
+      "fp-ts": "^1.17.1",
+      "newtype-ts": "^0.2.4",
+      "puppeteer": "^1.14.0"
+   }
+}
