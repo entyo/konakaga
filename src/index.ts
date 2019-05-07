@@ -2,11 +2,19 @@ import { IO } from "fp-ts/lib/IO";
 import { error, log } from "fp-ts/lib/Console";
 import { tryCatch } from "fp-ts/lib/TaskEither";
 import puppeteer from "puppeteer";
-import { ID, PASS, isoID, isoPASS, getUserData } from "./twins";
+import {
+  ID,
+  PASS,
+  isoID,
+  isoPASS,
+  getUserData,
+  buildMailAddress
+} from "./twins";
 import { TWINS_URL } from "./twins";
 import { getNodeEnv } from "./nodeenv";
 import { resolve } from "path";
 import { config } from "dotenv";
+import { setAPIKeyToMailClient, sendMail } from "./sendgrid";
 
 const panic = new IO(() => process.exit(1));
 
@@ -31,11 +39,8 @@ const takeScreenShot = (page: puppeteer.Page, path: string) =>
 
 const NODE_ENV = getNodeEnv().run();
 if (NODE_ENV === "development") {
-  config({ path: resolve(__dirname, "../../.env") });
+  config({ path: resolve(__dirname, "../.env") });
 }
-
-console.log(`$TWINS_ID: ${process.env.TWINS_ID}`);
-console.log(`$TWINS_PASS: ${process.env.TWINS_PASS}`);
 
 const fa = getUserData().run();
 if (fa.isLeft()) {
@@ -136,8 +141,14 @@ tryCatch(
         clip
           ? page
               .screenshot({ clip, path: "kyuko.png" })
-              .then(() => {
-                // TODO: メールを送る
+              .then(taken => {
+                // TODO: リファクタリングをする
+                const content = taken.toString("base64");
+                const fa = setAPIKeyToMailClient().run();
+                if (fa.isLeft()) {
+                  throw fa.value;
+                }
+                return sendMail(content, buildMailAddress(ID));
               })
               .then(() =>
                 console.log(

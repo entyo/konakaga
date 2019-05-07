@@ -20,7 +20,9 @@ const pass = prism<PASS>(isValidLengthAsPASS);
 const _ = "";
 
 function getID(): IO<Option<ID>> {
-  return new IO(() => id.getOption(fromNullable(process.env.TWINS_ID).getOrElse(_)));
+  return new IO(() =>
+    id.getOption(fromNullable(process.env.TWINS_ID).getOrElse(_))
+  );
 }
 
 function getPASS(): IO<Option<PASS>> {
@@ -46,3 +48,6 @@ export function getUserData(): IO<Either<Error, [ID, PASS]>> {
 
 export const TWINS_URL = "https://twins.tsukuba.ac.jp";
 
+export function buildMailAddress(id: ID): string {
+  return `${isoID.unwrap(id)}@s.tsukuba.ac.jp`;
+}
