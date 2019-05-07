@@ -9,7 +9,6 @@ import { fromOption, Either } from "fp-ts/lib/Either";
 // type SgMailWithAPIKey = number & { readonly __DegreeBrand: unique symbol };
 
 function getAPIKey(): IO<Option<string>> {
-  console.log(`SENDGRID_API_KEY: ${process.env.SENDGRID_API_KEY}`);
   return new IO(() => fromNullable(process.env.SENDGRID_API_KEY));
 }
 
