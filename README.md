@@ -4,7 +4,7 @@
 
 ## これはなに？
 
-毎朝TWINSを見て、休講情報があると通知してくれるプログラムです。
+毎朝 TWINS を見て、休講情報があると通知してくれるプログラムです。
 
 ![how-it-works](./img/how-it-works.png)
 
@@ -23,28 +23,36 @@ konakaga を使うためには、まず以下のサービスのアカウント�
 - [SendGrid: Email Delivery Service](https://sendgrid.com/)
   - konakaga からメール通知をするために使います
 
-また、以下の手順に従って、SendGridでkonakaga用のプロジェクトを作成しAPIキーを発行してください。
+また、以下の手順に従って、SendGrid で konakaga 用のプロジェクトを作成し API キーを発行してください。
 
-> 1. SendGridダッシュボードの「API Keys」のページでCreate API Keyを選択
-> 2. Create & Viewを選択
+> 1. SendGrid ダッシュボードの「API Keys」のページで Create API Key を選択
+> 2. Create & View を選択
 
-([APIキーの管理 - ドキュメント | SendGrid](https://sendgrid.kke.co.jp/docs/User_Manual_JP/Settings/api_keys.html#-Create-an-API-Key)より)
+([API キーの管理 - ドキュメント | SendGrid](https://sendgrid.kke.co.jp/docs/User_Manual_JP/Settings/api_keys.html#-Create-an-API-Key)より)
 
 ### 2. アプリケーションのデプロイ
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-↑このボタンを押すと、Heroku上で次のような画面が表示されます
+↑ このボタンを押すと、Heroku 上で次のような画面が表示されます
 
 ![作成画面](./img/create-heroku-app.png)
 
-1の手順で発行したアカウントに関する情報を入力して、`Deploy App` をクリックしてください。
+フォームを埋めて、`Deploy App` をクリックしてください。
+
+デプロイが終了すると、`Manage App`というボタンが出てくるのでクリックしてください。
+
+Dyno と呼ばれるリソースの設定を変更します。画像のように、`worker dyno` を ON, `web dyno` を OFF にしてください。
+
+![dyno-configuration](./img/dyno-configuration.png)
+
+（この作業は自動化したいところですが、[ドキュメント](https://devcenter.heroku.com/articles/nodejs-support#default-web-process-type)を見る限り手動でやらざるを得ないと認識しています。いいやり方をご存じの方は教えてください…）
 
 ## 免責事項
 
-- konakagaの不具合により休校情報を見逃しても開発者は一切責任を取りません
+- konakaga の不具合により休校情報を見逃しても開発者は一切責任を取りません
 - konakaga はスクレイピングによって情報を収集しているので、ある日突然動かなくなることがありますが、その都度直すことは大変なので動作を保証しません
-- konakagaの改変及び再配布を認めていますが、以下の点に注意してください
+- konakaga の改変及び再配布を認めていますが、以下の点に注意してください
   - スクレイピングの頻度(短期間に大量のリクエストを発行しないでください)
   - 個人情報・認証情報の取り扱い
     - konakaga がプログラムを各自でデプロイする方式を取っているのは、TWINS のパスワード等の情報を運営者が管理しないようにするためです
