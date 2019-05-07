@@ -166,13 +166,9 @@ export const runAllAsync: Promise<unknown> = tryCatch(
     )
   )
   .run()
-  .then(() =>
-    log("何もかも正常に動作しました👏")
-      .chain(() => process.exit(0))
-      .run()
-  )
+  .then(() => log("何もかも正常に動作しました👏").run())
   .catch(reason =>
     error(reason)
-      .chain(() => process.exit(1))
+      .chain(() => panic)
       .run()
   );
