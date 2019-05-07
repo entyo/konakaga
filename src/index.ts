@@ -1,14 +1,19 @@
-import * as nodecron from 'node-cron';
-import { getNodeEnv } from './nodeenv';
-import { runAllAsync } from './program';
+import * as nodecron from "node-cron";
+import { getNodeEnv } from "./nodeenv";
+import { task, panic } from "./program";
+import { log, error } from "fp-ts/lib/Console";
+import { fromIO } from "fp-ts/lib/TaskEither";
 
-const nodeEnv = getNodeEnv().run()
-console.log(process.env.NODE_ENV, process.env.TWINS_ID, process.env.TWINS_PASS, process.env.SENDGRID_API_KEY);
+const runnable = task
+  .chain(() => fromIO(log("何もかも正常に動作しました👏")))
+  .orElse(l =>
+    fromIO(error(`致命的なエラーが発生しました ${l}`).chain(() => panic))
+  );
+const nodeEnv = getNodeEnv().run();
 if (nodeEnv === "development") {
-  runAllAsync;
+  runnable.run();
 } else {
-  // nodecron.schedule('0 0 0 * * *', () => runAllAsync);
-  // test
-  const t = nodecron.schedule('* * * * *', () => runAllAsync);
+  // nodecron.schedule('0 0 0 * * *', () => );
+  const t = nodecron.schedule("* * * * *", () => runnable.run());
   t.start();
 }

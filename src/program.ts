@@ -1,5 +1,5 @@
 import { IO } from "fp-ts/lib/IO";
-import { error, log } from "fp-ts/lib/Console";
+import { error } from "fp-ts/lib/Console";
 import { tryCatch } from "fp-ts/lib/TaskEither";
 import puppeteer from "puppeteer";
 import {
@@ -16,7 +16,7 @@ import { resolve } from "path";
 import { config } from "dotenv";
 import { setAPIKeyToMailClient, sendMail } from "./sendgrid";
 
-const panic = new IO(() => process.exit(1));
+export const panic = new IO(() => process.exit(1));
 
 interface Clip {
   width: number;
@@ -50,7 +50,7 @@ if (fa.isLeft()) {
 }
 // TODO: asをやめる
 const [ID, PASS] = fa.value as [ID, PASS];
-export const runAllAsync: Promise<unknown> = tryCatch(
+export const task = tryCatch(
   () => puppeteer.launch(),
   reason => new Error(`puppeteer の起動に失敗しました: ${reason}`)
 )
@@ -164,11 +164,4 @@ export const runAllAsync: Promise<unknown> = tryCatch(
       () => browser.close(),
       reason => new Error(`puppetterが正常に終了しませんでした: ${reason}`)
     )
-  )
-  .run()
-  .then(() => log("何もかも正常に動作しました👏").run())
-  .catch(reason =>
-    error(reason)
-      .chain(() => panic)
-      .run()
   );
