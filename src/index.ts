@@ -13,7 +13,6 @@ const nodeEnv = getNodeEnv().run();
 if (nodeEnv === "development") {
   runnable.run();
 } else {
-  // nodecron.schedule('0 0 0 * * *', () => );
-  const t = nodecron.schedule("* * * * *", () => runnable.run());
+  const t = nodecron.schedule("0 0 0 * * *", () => runnable.run());
   t.start();
 }
