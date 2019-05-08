@@ -51,7 +51,11 @@ if (fa.isLeft()) {
 // TODO: asをやめる
 const [ID, PASS] = fa.value as [ID, PASS];
 export const task = tryCatch(
-  () => puppeteer.launch(),
+  () =>
+    puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"]
+    }),
   reason => new Error(`puppeteer の起動に失敗しました: ${reason}`)
 )
   .chain<[puppeteer.Browser, puppeteer.Page]>(browser =>
