@@ -9,6 +9,9 @@
     },
     {
       "url": "https://github.com/CoffeeAndCode/puppeteer-heroku-buildpack"
+    },
+    {
+      "url": "heroku/nodejs"
     }
   ],
   "env": {
