@@ -3,6 +3,14 @@
   "description": "TWINSの休校情報を通知するやつ",
   "repository": "https://github.com/entyo/konakaga",
   "image": "heroku/nodejs",
+  "buildpacks": [
+    {
+      "url": "https://github.com/jontewks/puppeteer-heroku-buildpack"
+    },
+    {
+      "url": "https://github.com/CoffeeAndCode/puppeteer-heroku-buildpack"
+    }
+  ],
   "env": {
     "TWINS_ID": {
       "description": "UTID-NAME（sから始まるユーザー名、TWINSでの認証に利用します）",
