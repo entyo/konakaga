@@ -155,7 +155,7 @@ export const task = tryCatch(
                   "休校情報が見つかったため、スクリーンショットを撮影しメールで通知しました。"
                 )
               )
-          : Promise.resolve(),
+          : Promise.resolve(console.log("今日休講の講義はないようです。")),
       reason => new Error(`スクリーンショットの撮影に失敗しました: ${reason}`)
     ).map(() => browser)
   )
