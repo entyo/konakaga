@@ -15,4 +15,5 @@ if (nodeEnv === "development") {
 } else {
   const t = nodecron.schedule("0 0 0 * * *", () => runnable.run());
   t.start();
+  console.log("毎朝0時に実行するように設定しました。");
 }
