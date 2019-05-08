@@ -1,2 +1,2 @@
-worker: ts-node src/index.ts
+worker: npm start
 web: echo 'Do nothing'
